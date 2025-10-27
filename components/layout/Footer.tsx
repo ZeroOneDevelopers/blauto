@@ -18,12 +18,12 @@ export default function Footer() {
           <div className="space-y-2 text-sm">
             <p className="flex items-center gap-3">
               <MapPinIcon className="h-4 w-4 text-white" aria-hidden />
-              <span>Varis Koropiou Ave 2, Voula 166 73</span>
+              <span>Lasithiou 4, Glifada 166 74</span>
             </p>
             <p className="flex items-center gap-3">
               <PhoneIcon className="h-4 w-4 text-white" aria-hidden />
-              <a href="tel:+306946061486" className="transition hover:text-white">
-                +30 694 606 1486
+              <a href="tel:+306955339579" className="transition hover:text-white">
+                +30 695 533 9579
               </a>
             </p>
             <p className="flex items-center gap-3">

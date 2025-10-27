@@ -56,7 +56,7 @@ slug,title,make,model,year,price,mileage,engine_cc,hp,fuel,transmission,body,col
 
 ## Assets
 
-- `public/images/iliadis-logo.svg` – Legacy Iliadis Executive Cars logotype (replace once the BL Auto Gallery asset is ready)
+- `public/images/blAuto-logo.svg` – Legacy BL Auto Gallery logotype (replace once the BL Auto Gallery asset is ready)
 - `public/images/showroom-preview.svg` – Social preview artwork
 - `public/sounds/` – Place mastered audio files referenced from the Prisma `audio_urls` array.
 

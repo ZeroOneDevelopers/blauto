@@ -40,7 +40,7 @@ export default function Navbar() {
         <Link href="/" className="flex items-center justify-center" onClick={() => setOpen(false)}>
           <div className="relative h-12 w-48 sm:h-14 sm:w-56 lg:h-16 lg:w-64">
             <Image
-              src="/images/iliadisLogo.png"
+              src="/images/blAutoLogo.png"
               alt="BL Auto Gallery"
               fill
               priority

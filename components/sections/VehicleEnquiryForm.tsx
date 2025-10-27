@@ -78,7 +78,7 @@ export default function VehicleEnquiryForm({ vehicleId, vehicleTitle }: Props) {
             value={form.phone}
             onChange={(event) => setForm((prev) => ({ ...prev, phone: event.target.value }))}
             className="mt-3 w-full min-h-12 rounded-2xl border border-white/20 bg-black/60 px-5 py-3 text-sm text-white placeholder:text-silver/40 transition focus:border-white/60 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/30"
-            placeholder="+30 69 1234 5678"
+            placeholder="+30 695 533 9579"
             type="tel"
           />
         </div>

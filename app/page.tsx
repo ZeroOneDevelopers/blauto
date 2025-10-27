@@ -11,16 +11,16 @@ type Slide = { src: string; alt: string };
 
 const HOME_HERO_SLIDES: Slide[] = [
   {
-    src: 'https://lh3.googleusercontent.com/p/AF1QipPEuQJ4gtwXEfzXPdjF5puoZ1JxospM5dZblV6j=s1360-w1360-h1020-rw',
-    alt: 'Ferrari SF90 parked inside a dimly lit concrete atrium'
+    src: 'https://amian-collectioncars.com/wp-content/uploads/2022/11/Showroom_Storage-11.jpg',
+    alt: 'Supercars'
   },
   {
-    src: 'https://lh3.googleusercontent.com/p/AF1QipNhyV71YbqktMn1_nAa5fxxIKvxnmxhE-eclpKS=s1360-w1360-h1020-rw',
-    alt: 'Bentley interior with quilted leather and illuminated console'
+    src: 'https://www.dnews.gr/media/k2/items/cache/2d680a18830053faf2c931ba1be5212b_XL.jpg',
+    alt: 'Nice'
   },
   {
-    src: 'https://lh3.googleusercontent.com/gps-cs-s/AC9h4nqVorWJzX_XPFW9rlHFiYc7nRba9CucvTT-007CCfKzlK7ieXHV_K4K0gDFvL-a2TXtmWReDK8SgvY4p60NBp22EscyF26kdAjP59dBAQfOIGbXgQzF5MfwIXcpdPYjnujCiIw=s1360-w1360-h1020-rw',
-    alt: 'Lamborghini Aventador accelerating through a tunnel at night'
+    src: 'https://andys-motors.com/assets/images/fromS/quality-used-cars.jpg',
+    alt: 'Classic cars'
   }
 ] as const;
 

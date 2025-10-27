@@ -76,10 +76,10 @@ export default function RootLayout({ children }: { children: ReactNode }) {
 
   const fallbackBackgrounds = {
     home: "url('https://lh3.googleusercontent.com/p/AF1QipNILPF4J37m6uDKjks-UACk-7Hw1PLJZRtGFE5_=s1360-w1360-h1020-rw')",
-    showroom: "url('https://lh3.googleusercontent.com/gps-cs-s/AC9h4npSYfBmHmKBb6tcY4QOfTO0PrMD89Rv6CnQk664BBOLT2igSeCoSR_5JyX7E01VyQhhD04AYDT4aq3_azNmR6nOScku2NrNHc_WAbKC2UkXCoi4kxUOSuk9qXBAAicoqTRRPpX26w=s1360-w1360-h1020-rw')",
+    showroom: "url('https://www.networkoptix.com/hubfs/Imported_Blog_Media/Qualigied-SuperCars-By-Niche-Cars-Group-3-1024x768.jpg')",
     details: "url('https://images.unsplash.com/photo-1590272456521-1bbe160a18ce?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDE0fHx8ZW58MHx8fHx8')",
     dashboard: "url('https://images.unsplash.com/photo-1590272456521-1bbe160a18ce?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDE0fHx8ZW58MHx8fHx8')",
-    testDrive: "url('https://www.iliadisrentals.com/rsq8/0-02-05-f5d0bf07c07e55c2842b58eb25e87efed29c052e7921d7f127da0fd4459bf77f_5c9e0d0335f46abf.webp')"
+    testDrive: "url('https://s23226.pcdn.co/wp-content/uploads/2024/10/Saraceno-test-drive-safety.jpg')"
   } as const;
 
   backgroundStyles['--page-bg-home'] =
@@ -117,12 +117,12 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       'Premium showroom in Athens specialising in Ferrari, Lamborghini, Rolls-Royce and executive vehicles.',
     address: {
       '@type': 'PostalAddress',
-      streetAddress: 'Varis Koropiou Ave 2',
-      addressLocality: 'Voula 166 73',
+      streetAddress: 'Lasithiou 4',
+      addressLocality: 'Glifada 166 74',
       addressCountry: 'GR'
     },
-    openingHours: 'Mo-Fr 10:00-19:00',
-    telephone: '+30 694 606 1486'
+    openingHours: 'Mo-Fr 09:00-19:30',
+    telephone: '+30 695 533 9579'
   } as const;
 
   return (

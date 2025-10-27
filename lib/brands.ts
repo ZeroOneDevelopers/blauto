@@ -11,7 +11,11 @@ const BRAND_LOGOS: Record<string, string> = {
   'rolls-royce': '/brands/rolls-royce.svg',
   maserati: '/brands/maserati.svg',
   astonmartin: '/brands/aston-martin.svg',
-  'aston-martin': '/brands/aston-martin.svg'
+  'aston-martin': '/brands/aston-martin.svg',
+  abarth:'/brands/abarth.svg',
+  jaguar:'/brands/jaguar.svg',
+  mazda:'/brands/mazda.svg',
+  volkswagen: '/brands/volkswagen.svg'
 };
 
 const normalise = (value: string) =>

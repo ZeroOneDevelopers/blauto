@@ -6,7 +6,7 @@ const prisma = new PrismaClient();
 
 async function main() {
   // --- Admin user ---
-  const email = "admin@iliadis.cars";
+  const email = "admin@blautogallery.cars";
   const password = "admin123"; // άλλαξέ το μετά το πρώτο login
   const hash = await bcrypt.hash(password, 10);
 

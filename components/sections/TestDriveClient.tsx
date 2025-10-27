@@ -101,7 +101,7 @@ export default function TestDriveClient({ vehicles }: Props) {
         <form onSubmit={onSubmit} className="mt-10 space-y-6">
           {[
             { label: 'Full Name', field: 'fullName', type: 'text', placeholder: 'John Papadopoulos' },
-            { label: 'Phone', field: 'phone', type: 'tel', placeholder: '+30 69 1234 5678' },
+            { label: 'Phone', field: 'phone', type: 'tel', placeholder: '+30 695 533 9579' },
             { label: 'Email', field: 'email', type: 'email', placeholder: 'vip@domain.com' }
           ].map((input) => (
             <div key={input.field}>
@@ -216,8 +216,8 @@ export default function TestDriveClient({ vehicles }: Props) {
           <div className="space-y-3 text-sm text-silver/70">
             <p className="flex items-center gap-3">
               <PhoneIcon className="h-5 w-5 text-white" aria-hidden />
-              <a href="tel:+306946061486" className="transition hover:text-white">
-                +30 694 606 1486
+              <a href="tel:+306955339579" className="transition hover:text-white">
+                +30 695 533 9579
               </a>
             </p>
             <p className="flex items-center gap-3">
@@ -228,7 +228,7 @@ export default function TestDriveClient({ vehicles }: Props) {
             </p>
             <p className="flex items-center gap-3">
               <CalendarIcon className="h-5 w-5 text-white" aria-hidden />
-              <span>Varis Koropiou Ave 2, Voula 166 73</span>
+              <span>Lasithiou 4, Glifada 166 74</span>
             </p>
           </div>
         </div>
