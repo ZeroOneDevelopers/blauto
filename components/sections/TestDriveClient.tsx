@@ -6,6 +6,7 @@ import GlowButton from '@/components/ui/GlowButton';
 import { motion, AnimatePresence } from 'framer-motion';
 import type { ShowroomVehicle } from '@/lib/vehicles';
 import { createBooking } from '@/app/dashboard/actions';
+import { CalendarIcon, CheckBadgeIcon, EnvelopeIcon, PhoneIcon } from '@heroicons/react/24/outline';
 
 const DEFAULT_START = '10:00';
 const DEFAULT_END = '11:00';
@@ -42,7 +43,7 @@ export default function TestDriveClient({ vehicles }: Props) {
 
   const calendarLink = useMemo(() => {
     const base = 'https://calendar.google.com/calendar/render?action=TEMPLATE';
-    const text = encodeURIComponent(`Test Drive - ${formState.vehicleName || 'Iliadis Executive Cars'}`);
+    const text = encodeURIComponent(`Test Drive - ${formState.vehicleName || 'BL Auto Gallery'}`);
     const details = encodeURIComponent(
       `Client: ${formState.fullName}\nPhone: ${formState.phone}\nEmail: ${formState.email}\nVehicle: ${formState.vehicleName}\nPreferred Date: ${formState.preferredDate}`
     );
@@ -51,17 +52,17 @@ export default function TestDriveClient({ vehicles }: Props) {
 
   const whatsappLink = useMemo(() => {
     const message = encodeURIComponent(
-      `Hello Iliadis Executive Cars,%0A%0AI would like to book a test drive.%0A%0AName: ${formState.fullName}%0APhone: ${formState.phone}%0AVehicle: ${formState.vehicleName}%0APreferred Date: ${formState.preferredDate}`
+      `Hello BL Auto Gallery,%0A%0AI would like to book a test drive.%0A%0AName: ${formState.fullName}%0APhone: ${formState.phone}%0AVehicle: ${formState.vehicleName}%0APreferred Date: ${formState.preferredDate}`
     );
     return `https://wa.me/302101234567?text=${message}`;
   }, [formState]);
 
   const emailLink = useMemo(() => {
-    const subject = encodeURIComponent('Test Drive Request - Iliadis Executive Cars');
+    const subject = encodeURIComponent('Test Drive Request - BL Auto Gallery');
     const body = encodeURIComponent(
       `Name: ${formState.fullName}\nPhone: ${formState.phone}\nVehicle: ${formState.vehicleName}\nPreferred Date: ${formState.preferredDate}`
     );
-    return `mailto:liaison@iliadis.gr?subject=${subject}&body=${body}`;
+    return `mailto:concierge@blautogallery.com?subject=${subject}&body=${body}`;
   }, [formState]);
 
   function onSubmit(event: FormEvent<HTMLFormElement>) {
@@ -91,13 +92,13 @@ export default function TestDriveClient({ vehicles }: Props) {
 
   return (
     <div className="mx-auto grid max-w-5xl gap-12 px-4 sm:px-6 lg:grid-cols-[1.2fr_1fr]">
-      <div className="surface-panel-strong rounded-3xl p-10">
+      <div className="surface-panel-strong p-12">
         <p className="text-xs uppercase tracking-[0.55em] text-silver/60">Book A Private Experience</p>
-        <h1 className="mt-4 font-heading text-4xl text-white">Test Drive Concierge</h1>
-        <p className="mt-3 text-sm text-silver/70">
+        <h1 className="mt-5 font-heading text-4xl text-white">Test Drive Concierge</h1>
+        <p className="mt-4 text-sm text-silver/70">
           Submit your details and our executive liaison team will coordinate a bespoke test drive or showroom preview.
         </p>
-        <form onSubmit={onSubmit} className="mt-8 space-y-6">
+        <form onSubmit={onSubmit} className="mt-10 space-y-6">
           {[
             { label: 'Full Name', field: 'fullName', type: 'text', placeholder: 'John Papadopoulos' },
             { label: 'Phone', field: 'phone', type: 'tel', placeholder: '+30 69 1234 5678' },
@@ -111,7 +112,7 @@ export default function TestDriveClient({ vehicles }: Props) {
                 value={formState[input.field as keyof FormState] as string}
                 onChange={(event) => setFormState((prev) => ({ ...prev, [input.field]: event.target.value }))}
                 placeholder={input.placeholder}
-                className="mt-3 w-full rounded-full border border-white/25 bg-black/60 px-5 py-3 text-sm text-white placeholder:text-silver/40 focus:border-white/60 focus:outline-none min-h-12"
+                className="mt-3 w-full min-h-12 rounded-2xl border border-white/20 bg-black/60 px-5 py-3 text-sm text-white placeholder:text-silver/40 transition focus:border-white/60 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/30"
               />
             </div>
           ))}
@@ -129,7 +130,7 @@ export default function TestDriveClient({ vehicles }: Props) {
                 }));
               }}
               disabled={!hasVehicles}
-              className="mt-3 w-full rounded-full border border-white/25 bg-black/60 px-5 py-3 text-sm text-white focus:border-white/60 focus:outline-none disabled:cursor-not-allowed disabled:opacity-60 min-h-12"
+              className="mt-3 w-full min-h-12 rounded-2xl border border-white/20 bg-black/60 px-5 py-3 text-sm text-white transition focus:border-white/60 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/30 disabled:cursor-not-allowed disabled:opacity-60"
             >
               <option value="" disabled>
                 {hasVehicles ? 'Select a vehicle' : 'Inventory required'}
@@ -149,10 +150,10 @@ export default function TestDriveClient({ vehicles }: Props) {
               value={formState.preferredDate}
               onChange={(event) => setFormState((prev) => ({ ...prev, preferredDate: event.target.value }))}
               disabled={!hasVehicles}
-              className="mt-3 w-full rounded-full border border-white/25 bg-black/60 px-5 py-3 text-sm text-white focus:border-white/60 focus:outline-none min-h-12"
+              className="mt-3 w-full min-h-12 rounded-2xl border border-white/20 bg-black/60 px-5 py-3 text-sm text-white transition focus:border-white/60 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/30"
             />
           </div>
-          <div className="flex flex-col gap-4 sm:flex-row">
+          <div className="flex flex-col gap-4 pt-2 sm:flex-row">
             <GlowButton type="submit" disabled={isPending || !hasVehicles}>
               {isPending ? 'Submitting…' : 'Submit Request'}
             </GlowButton>
@@ -167,10 +168,10 @@ export default function TestDriveClient({ vehicles }: Props) {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: 30 }}
-              className="mt-8 rounded-3xl border border-emerald-400/40 bg-emerald-500/10 p-6 text-sm text-emerald-200"
+              className="mt-10 rounded-3xl border border-emerald-400/40 bg-emerald-500/10 p-7 text-sm text-emerald-200 shadow-[0_32px_80px_-45px_rgba(16,185,129,0.55)]"
             >
               <p className="font-heading text-lg text-white">Your test drive request has been sent.</p>
-              <p className="mt-2 text-silver/70">
+              <p className="mt-3 text-silver/70">
                 Our team will contact you shortly to schedule the appointment. Add it to your calendar or follow up by email.
               </p>
               <div className="mt-6 flex flex-col gap-3 sm:flex-row">
@@ -186,21 +187,50 @@ export default function TestDriveClient({ vehicles }: Props) {
         </AnimatePresence>
       </div>
       <div className="space-y-6">
-        <div className="surface-panel rounded-3xl p-10">
+        <div className="surface-panel p-10">
           <h2 className="font-heading text-2xl text-white">Concierge Privileges</h2>
-          <ul className="mt-4 space-y-4 text-sm text-silver/70">
-            <li>• Private lounge reception in Athens with signature welcome ritual.</li>
-            <li>• Racetrack or coastal route options tailored to each vehicle.</li>
-            <li>• Chauffeur-driven collection and return on request.</li>
-            <li>• Opportunity to explore financing or trade-in packages.</li>
+          <ul className="mt-5 space-y-4 text-sm text-silver/70">
+            <li className="flex items-start gap-3">
+              <CheckBadgeIcon className="mt-0.5 h-5 w-5 text-white" aria-hidden />
+              <span>Private lounge reception in Athens with signature welcome ritual.</span>
+            </li>
+            <li className="flex items-start gap-3">
+              <CheckBadgeIcon className="mt-0.5 h-5 w-5 text-white" aria-hidden />
+              <span>Racetrack or coastal route options tailored to each vehicle.</span>
+            </li>
+            <li className="flex items-start gap-3">
+              <CheckBadgeIcon className="mt-0.5 h-5 w-5 text-white" aria-hidden />
+              <span>Chauffeur-driven collection and return on request.</span>
+            </li>
+            <li className="flex items-start gap-3">
+              <CheckBadgeIcon className="mt-0.5 h-5 w-5 text-white" aria-hidden />
+              <span>Opportunity to explore financing or trade-in packages.</span>
+            </li>
           </ul>
         </div>
-        <div className="surface-panel rounded-3xl p-10">
+        <div className="surface-panel p-10 space-y-4">
           <h2 className="font-heading text-2xl text-white">Need Immediate Assistance?</h2>
-          <p className="mt-3 text-sm text-silver/70">
-            Call our executive line at <a href="tel:+306946061486" className="text-white">+30 694 606 1486</a> or visit the showroom at
-            Varis Koropiou Ave 2, Voula 166 73.
+          <p className="text-sm text-silver/70">
+            Call our executive line or send us a note and we&apos;ll arrange your visit to the BL Auto Gallery lounge.
           </p>
+          <div className="space-y-3 text-sm text-silver/70">
+            <p className="flex items-center gap-3">
+              <PhoneIcon className="h-5 w-5 text-white" aria-hidden />
+              <a href="tel:+306946061486" className="transition hover:text-white">
+                +30 694 606 1486
+              </a>
+            </p>
+            <p className="flex items-center gap-3">
+              <EnvelopeIcon className="h-5 w-5 text-white" aria-hidden />
+              <a href="mailto:concierge@blautogallery.com" className="transition hover:text-white">
+                concierge@blautogallery.com
+              </a>
+            </p>
+            <p className="flex items-center gap-3">
+              <CalendarIcon className="h-5 w-5 text-white" aria-hidden />
+              <span>Varis Koropiou Ave 2, Voula 166 73</span>
+            </p>
+          </div>
         </div>
       </div>
     </div>

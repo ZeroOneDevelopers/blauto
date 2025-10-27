@@ -22,6 +22,21 @@ body {
   image-rendering: auto;
 }
 
+@layer base {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-heading tracking-tight text-balance;
+  }
+
+  p {
+    @apply leading-relaxed;
+  }
+}
+
 body::before,
 body::after {
   content: '';
@@ -61,7 +76,7 @@ a:hover {
 }
 
 .section-padding {
-  @apply px-6 py-20 md:px-12 lg:px-24;
+  @apply px-6 py-24 md:px-12 lg:px-24;
 }
 
 .glass {
@@ -71,11 +86,11 @@ a:hover {
 @layer components {
   /* Shared panel surfaces so overlays stay consistent across sections */
   .surface-panel {
-    @apply border border-white/15 bg-black/70 backdrop-blur-2xl shadow-innerGlow;
+    @apply border border-white/15 bg-black/70 backdrop-blur-2xl shadow-[0_30px_80px_-40px_rgba(8,10,16,0.85)] rounded-3xl;
   }
 
   .surface-panel-strong {
-    @apply border border-white/25 bg-black/80 backdrop-blur-2xl shadow-innerGlow;
+    @apply border border-white/25 bg-black/80 backdrop-blur-2xl shadow-[0_35px_90px_-35px_rgba(8,10,16,0.95)] rounded-3xl;
   }
 }
 
@@ -84,7 +99,7 @@ a:hover {
 }
 
 .card-hover:hover {
-  @apply -translate-y-2 shadow-glow border-white/30;
+  @apply -translate-y-2 border-white/30 shadow-[0_45px_120px_-50px_rgba(231,233,238,0.35)];
 }
 
 ::-webkit-scrollbar {

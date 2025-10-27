@@ -38,21 +38,21 @@ export default async function HomePage() {
       <Hero slides={HOME_HERO_SLIDES} />
       <Highlights />
       <section className="section-padding">
-        <div className="mx-auto max-w-7xl space-y-10 px-4 sm:px-6 lg:px-8">
-          <div className="space-y-3 text-center">
+        <div className="mx-auto max-w-7xl space-y-12 px-4 sm:px-6 lg:px-8">
+          <div className="space-y-4 text-center">
             <p className="text-xs uppercase tracking-[0.55em] text-silver/60">Featured Fleet</p>
             <h2 className="font-heading text-4xl text-white md:text-5xl">Showroom Highlights</h2>
-            <p className="text-sm text-silver/70">
+            <p className="mx-auto max-w-3xl text-sm text-silver/70">
               A curated glimpse of the executive vehicles currently in the spotlight. Discover the craftsmanship, provenance and
               cinematic presentation awaiting inside the showroom.
             </p>
           </div>
-          <div className="grid gap-6 sm:grid-cols-2 xl:grid-cols-3">
+          <div className="grid gap-7 sm:grid-cols-2 xl:grid-cols-3">
             {showroomVehicles.slice(0, 6).map((vehicle, index) => (
               <CarCard key={vehicle.id} vehicle={vehicle} index={index} />
             ))}
             {showroomVehicles.length === 0 && (
-              <div className="sm:col-span-2 xl:col-span-3 surface-panel rounded-3xl p-8 text-sm text-silver/70">
+              <div className="sm:col-span-2 xl:col-span-3 surface-panel p-10 text-sm text-silver/70">
                 Feature vehicles from the dashboard to elevate this showcase on the homepage.
               </div>
             )}
@@ -60,18 +60,18 @@ export default async function HomePage() {
         </div>
       </section>
       <section className="section-padding">
-        <div className="mx-auto max-w-5xl rounded-3xl border border-white/10 bg-gradient-to-br from-white/5 via-white/5 to-transparent p-12 text-center shadow-innerGlow">
+        <div className="mx-auto max-w-5xl space-y-6 rounded-3xl border border-white/10 bg-gradient-to-br from-white/5 via-white/5 to-transparent p-12 text-center shadow-[0_45px_120px_-60px_rgba(9,11,17,0.75)]">
           <p className="text-xs uppercase tracking-[0.5em] text-silver/60">Private Lounge</p>
-          <h2 className="mt-4 font-heading text-4xl text-white">Reserve Your Bespoke Consultation</h2>
-          <p className="mt-6 text-sm text-silver/70">
+          <h2 className="font-heading text-4xl text-white">Reserve Your Bespoke Consultation</h2>
+          <p className="text-sm text-silver/70">
             Connect directly with our executive liaison team for acquisition sourcing, discreet trade-ins, or to curate a
             tailor-made driving experience. Every enquiry is handled with absolute confidentiality.
           </p>
-          <div className="mt-10 flex flex-col justify-center gap-4 sm:flex-row">
+          <div className="flex flex-col justify-center gap-4 pt-4 sm:flex-row">
             <GlowButton href="/test-drive" className="w-full sm:w-auto">
               Book Test Drive
             </GlowButton>
-            <GlowButton href="mailto:liaison@iliadis.gr" variant="secondary" className="w-full sm:w-auto">
+            <GlowButton href="mailto:concierge@blautogallery.com" variant="secondary" className="w-full sm:w-auto">
               Email Our Curators
             </GlowButton>
           </div>

@@ -66,7 +66,7 @@ export default function Hero({ slides }: HeroProps) {
     <section ref={ref} className="relative flex min-h-[90vh] flex-col justify-end overflow-hidden">
       <Carousel
         slides={carouselSlides}
-        ariaLabel="Iliadis hero showcase"
+        ariaLabel="BL Auto Gallery hero showcase"
         className="absolute inset-0 h-full w-full"
         controlsClassName="px-6"
         loop
@@ -78,13 +78,13 @@ export default function Hero({ slides }: HeroProps) {
         className="pointer-events-none absolute inset-0 z-10 bg-[radial-gradient(circle_at_50%_-20%,rgba(255,255,255,0.3),transparent_65%)]/60"
         aria-hidden
       />
-        <motion.div style={{ y }} className="relative z-30 section-padding pb-40 sm:pb-48">
-        <div className="surface-panel-strong max-w-3xl rounded-3xl border-white/15 p-8 sm:p-10">
+      <motion.div style={{ y }} className="relative z-30 section-padding pb-40 sm:pb-48">
+        <div className="surface-panel-strong max-w-3xl space-y-7 border-white/20 p-8 sm:max-w-4xl sm:p-12">
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: 'easeOut' }}
-            className="text-sm uppercase tracking-[0.6em] text-silver/80"
+            className="text-xs uppercase tracking-[0.65em] text-silver/80"
           >
             Redefining Luxury
           </motion.p>
@@ -92,7 +92,7 @@ export default function Hero({ slides }: HeroProps) {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2, duration: 0.9, ease: 'easeOut' }}
-            className="mt-6 font-heading text-5xl text-white md:text-6xl lg:text-7xl"
+            className="font-heading text-5xl text-white md:text-6xl lg:text-7xl"
           >
             A cinematic journey through the world&apos;s most prestigious executive vehicles.
           </motion.h1>
@@ -100,16 +100,16 @@ export default function Hero({ slides }: HeroProps) {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.35, duration: 0.9, ease: 'easeOut' }}
-            className="mt-8 text-lg text-silver/80"
+            className="text-base text-silver/75 sm:text-lg"
           >
-            Iliadis Executive Cars orchestrates bespoke driving experiences with Ferrari, Lamborghini, Rolls-Royce, Bentley and
-            more. Step into a digital atelier where each vehicle is presented with cinematic reverence.
+            BL Auto Gallery orchestrates bespoke driving experiences with Ferrari, Lamborghini, Rolls-Royce, Bentley and more.
+            Step into a digital atelier where each vehicle is presented with cinematic reverence.
           </motion.p>
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5, duration: 0.9, ease: 'easeOut' }}
-            className="mt-12 flex flex-col gap-4 sm:flex-row sm:flex-wrap"
+            className="flex flex-col gap-3 pt-4 sm:flex-row sm:flex-wrap"
           >
             <GlowButton href="/showroom" className="w-full sm:w-auto">
               Explore Collection

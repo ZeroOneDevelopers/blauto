@@ -8,6 +8,7 @@ import Carousel from '@/components/ui/Carousel';
 import { getBrandLogo } from '@/lib/brands';
 import { useRouter } from 'next/navigation';
 import type { KeyboardEventHandler } from 'react';
+import { BoltIcon, Cog6ToothIcon, ArrowsRightLeftIcon } from '@heroicons/react/24/outline';
 
 const MotionDiv = motion.div;
 
@@ -63,9 +64,9 @@ export default function CarCard({ vehicle, index }: { vehicle: ShowroomVehicle; 
         aria-label={`View details for ${vehicle.title}`}
         onClick={navigateToDetails}
         onKeyDown={handleKeyDown}
-        className="group relative flex h-full cursor-pointer flex-col overflow-hidden rounded-3xl surface-panel-strong transition-shadow duration-500 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/40"
+        className="group relative flex h-full cursor-pointer flex-col overflow-hidden rounded-3xl border border-white/10 bg-black/80 shadow-[0_35px_90px_-45px_rgba(10,12,18,0.95)] backdrop-blur-2xl transition-transform duration-500 hover:-translate-y-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/40"
       >
-        <div className="relative z-20">
+        <div className="relative z-20 overflow-hidden rounded-3xl">
           <Carousel
             slides={slides}
             ariaLabel={`${vehicle.title} preview images`}
@@ -73,20 +74,20 @@ export default function CarCard({ vehicle, index }: { vehicle: ShowroomVehicle; 
             controlsClassName="px-4"
           />
         </div>
-        <div className="relative z-10 flex flex-1 flex-col gap-5 px-6 pb-6 pt-6 sm:px-7">
-          <div className="space-y-3">
+        <div className="relative z-10 flex flex-1 flex-col gap-6 px-7 pb-8 pt-7">
+          <div className="space-y-4">
             <div className="flex items-center gap-3 text-xs uppercase tracking-[0.3em] text-silver/60">
               {logo ? (
                 <span
                   aria-hidden="true"
-                  className="relative inline-flex h-6 w-6 overflow-hidden rounded-md border border-black/10 bg-white/20"
+                  className="relative inline-flex h-8 w-8 items-center justify-center overflow-hidden rounded-xl border border-white/10 bg-white/10 p-1"
                 >
-                  <Image src={logo} alt={`${vehicle.make} logo`} fill sizes="28px" className="object-cover" />
+                  <Image src={logo} alt={`${vehicle.make} logo`} fill sizes="32px" className="object-contain" />
                 </span>
               ) : null}
               <span className="line-clamp-1">{vehicle.make}</span>
             </div>
-            <h3 className="font-heading text-xl text-white line-clamp-2">{vehicle.title}</h3>
+            <h3 className="font-heading text-2xl text-white line-clamp-2">{vehicle.title}</h3>
             <p className="flex items-center gap-2 text-xs uppercase tracking-[0.3em] text-silver/50 line-clamp-1">
               <span>{vehicle.make}</span>
               <span aria-hidden>·</span>
@@ -94,22 +95,28 @@ export default function CarCard({ vehicle, index }: { vehicle: ShowroomVehicle; 
             </p>
           </div>
           <div className="grid grid-cols-2 gap-4 text-[0.65rem] uppercase tracking-[0.25em] text-silver/60 sm:grid-cols-3">
-            <div>
-              <p className="text-silver/40">Power</p>
-              <p className="mt-1 text-sm text-white">{vehicle.hp} HP</p>
+            <div className="space-y-1">
+              <p className="flex items-center gap-2 text-silver/40">
+                <BoltIcon className="h-4 w-4" aria-hidden /> Power
+              </p>
+              <p className="text-sm text-white">{vehicle.hp} HP</p>
             </div>
-            <div>
-              <p className="text-silver/40">Engine</p>
-              <p className="mt-1 text-sm text-white">{vehicle.engine_cc.toLocaleString()} cc</p>
+            <div className="space-y-1">
+              <p className="flex items-center gap-2 text-silver/40">
+                <Cog6ToothIcon className="h-4 w-4" aria-hidden /> Engine
+              </p>
+              <p className="text-sm text-white">{vehicle.engine_cc.toLocaleString()} cc</p>
             </div>
-            <div>
-              <p className="text-silver/40">Transmission</p>
-              <p className="mt-1 text-sm text-white">{vehicle.transmission}</p>
+            <div className="space-y-1">
+              <p className="flex items-center gap-2 text-silver/40">
+                <ArrowsRightLeftIcon className="h-4 w-4" aria-hidden /> Transmission
+              </p>
+              <p className="text-sm text-white">{vehicle.transmission}</p>
             </div>
           </div>
           {vehicle.description && <p className="text-sm text-silver/70 line-clamp-3">{vehicle.description}</p>}
           <div className="mt-auto flex flex-wrap items-center justify-between gap-3 text-white">
-            <span className="text-lg font-semibold">{formatCurrency(vehicle.price)}</span>
+            <span className="text-lg font-semibold tracking-tight">{formatCurrency(vehicle.price)}</span>
             <span className="text-xs uppercase tracking-[0.35em] text-silver/70 transition-colors group-hover:text-white">
               View Details
             </span>
