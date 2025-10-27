@@ -1,0 +1,26 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="glow" cx="50%" cy="30%" r="70%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.6" />
+      <stop offset="60%" stop-color="#ffffff" stop-opacity="0.05" />
+      <stop offset="100%" stop-color="#0b0c10" stop-opacity="0" />
+    </radialGradient>
+    <linearGradient id="base" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#050507" />
+      <stop offset="100%" stop-color="#14151b" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#base)" />
+  <circle cx="400" cy="180" r="420" fill="url(#glow)" />
+  <circle cx="880" cy="120" r="360" fill="url(#glow)" opacity="0.55" />
+  <text x="90" y="150" font-family="'Space Grotesk', 'Manrope', 'sans-serif'" font-size="88" fill="#ffffff" letter-spacing="10">
+    REDefining Luxury
+  </text>
+  <text x="90" y="240" font-family="'Poppins', 'sans-serif'" font-size="32" fill="#e7e9ee">
+    Iliadis Executive Cars · Digital Showroom
+  </text>
+  <rect x="90" y="290" width="460" height="2" fill="#e7e9ee" opacity="0.35" />
+  <text x="90" y="350" font-family="'Poppins', 'sans-serif'" font-size="24" fill="#e7e9ee" opacity="0.75">
+    Ferrari · Lamborghini · Rolls-Royce · Bespoke Executive Vehicles
+  </text>
+</svg>

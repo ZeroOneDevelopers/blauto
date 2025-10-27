@@ -1,0 +1,52 @@
+{
+  "name": "iliadis-web-app",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "postinstall": "prisma generate",
+    "build": "prisma generate && next build",
+    "start": "next start",
+    "lint": "next lint",
+    "prisma:gen": "prisma generate",
+    "prisma:migrate": "prisma migrate dev --name init",
+    "db:seed": "ts-node prisma/seed.ts"
+  },
+  "dependencies": {
+    "@headlessui/react": "^2.1.7",
+    "@heroicons/react": "^2.1.1",
+    "@prisma/client": "5.22.0",
+    "bcryptjs": "^2.4.3",
+    "class-variance-authority": "^0.7.0",
+    "clsx": "^2.1.0",
+    "framer-motion": "^10.18.0",
+    "lamejs": "^1.2.0",
+    "next": "^14.2.3",
+    "next-auth": "^4.24.7",
+    "next-themes": "^0.3.0",
+    "papaparse": "^5.4.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@netlify/plugin-nextjs": "^5.14.3",
+    "@types/bcryptjs": "^2.4.6",
+    "@types/node": "^20.11.19",
+    "@types/papaparse": "^5.3.16",
+    "@types/react": "^18.2.47",
+    "@types/react-dom": "^18.2.18",
+    "autoprefixer": "^10.4.16",
+    "eslint": "^8.56.0",
+    "eslint-config-next": "^14.2.3",
+    "postcss": "^8.4.32",
+    "prisma": "5.22.0",
+    "tailwindcss": "^3.4.3",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.3.3"
+  }, 
+  "engines": {
+    "node": "20.x"
+  }
+
+
+}

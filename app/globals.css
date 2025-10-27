@@ -1,0 +1,141 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+  /* Subtle noise overlay to keep the cinematic grain without muddying text */
+  --bg-noise: repeating-conic-gradient(
+    from 45deg,
+    rgba(255, 255, 255, 0.02) 0deg 15deg,
+    rgba(0, 0, 0, 0.02) 15deg 30deg
+  );
+  --page-bg-image: var(--page-bg-home);
+  --page-overlay-strength: var(--page-overlay-home);
+}
+
+body {
+  @apply bg-graphite text-silver font-body antialiased;
+  position: relative;
+  min-height: 100vh;
+  background-color: #0b0c10;
+  image-rendering: auto;
+}
+
+body::before,
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  transform: translateZ(0);
+}
+
+body::before {
+  z-index: -40;
+  background-attachment: fixed;
+  background-image: var(--page-bg-image);
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: var(--page-overlay-strength, 0.4);
+  filter: saturate(0.95) brightness(0.9);
+}
+
+body::after {
+  z-index: -30;
+  background-attachment: fixed, fixed;
+  background-repeat: no-repeat, repeat;
+  background-size: cover, 320px 320px;
+  background-color: #0b0c10;
+  opacity: var(--page-overlay-strength, 0.2);
+  mix-blend-mode: normal;
+}
+
+a {
+  @apply text-silver transition-colors duration-300;
+}
+
+a:hover {
+  @apply text-white;
+}
+
+.section-padding {
+  @apply px-6 py-20 md:px-12 lg:px-24;
+}
+
+.glass {
+  @apply border border-white/10 bg-black/60 backdrop-blur-2xl shadow-innerGlow;
+}
+
+@layer components {
+  /* Shared panel surfaces so overlays stay consistent across sections */
+  .surface-panel {
+    @apply border border-white/15 bg-black/70 backdrop-blur-2xl shadow-innerGlow;
+  }
+
+  .surface-panel-strong {
+    @apply border border-white/25 bg-black/80 backdrop-blur-2xl shadow-innerGlow;
+  }
+}
+
+.card-hover {
+  @apply transition-all duration-500 ease-out;
+}
+
+.card-hover:hover {
+  @apply -translate-y-2 shadow-glow border-white/30;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.04);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 9999px;
+}
+
+.video-overlay {
+  background: radial-gradient(circle at 20% 20%, rgba(231, 233, 238, 0.08), transparent 55%),
+    radial-gradient(circle at 80% 0%, rgba(255, 255, 255, 0.05), transparent 60%),
+    linear-gradient(115deg, rgba(11, 12, 16, 0.8) 0%, rgba(11, 12, 16, 0.2) 100%);
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.line-clamp-1,
+.line-clamp-2,
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.line-clamp-1 {
+  -webkit-line-clamp: 1;
+}
+
+.line-clamp-2 {
+  -webkit-line-clamp: 2;
+}
+
+.line-clamp-3 {
+  -webkit-line-clamp: 3;
+}
+
+/*
+// REQUIRED ASSETS (not included):
+// none
+*/

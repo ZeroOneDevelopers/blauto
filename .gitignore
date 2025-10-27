@@ -1,0 +1,23 @@
+# dependencies
+node_modules/
+
+# next.js build artifacts
+.next/
+dist/
+.vercel/
+
+# environment files
+.env
+.env.*
+!.env.example
+
+# logs
+*.log
+
+# editor/OS
+.DS_Store
+
+# media exclusions
+public/assets/*.mp3
+public/assets/*.mp4
+public/assets/*.zip

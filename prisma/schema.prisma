@@ -1,0 +1,87 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Vehicle {
+  id           String   @id @default(cuid())
+  slug         String   @unique
+  title        String
+  make         String
+  model        String
+  year         Int
+  price        Int
+  mileage      Int
+  engine_cc    Int
+  hp           Int
+  fuel         String
+  transmission String
+  body         String
+  color        String?
+  location     String?
+  description  String?
+  images       String[] @default([])
+  audio_urls   String[] @default([])
+  featured     Boolean  @default(false)
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+  leads        Lead[]
+  bookings     Booking[]
+  @@index([make, model, year, price], name: "Vehicle_make_model_year_price_idx")
+}
+
+enum LeadType {
+  TEST_DRIVE
+  GENERAL
+  OFFER
+}
+model Lead {
+  id        String   @id @default(cuid())
+  type      LeadType
+  vehicleId String?
+  vehicle   Vehicle? @relation(fields: [vehicleId], references: [id], onUpdate: Cascade, onDelete: SetNull)
+  name      String
+  phone     String
+  email     String
+  message   String?
+  source    String?
+  createdAt DateTime @default(now())
+  @@index([vehicleId])
+}
+
+enum BookingStatus {
+  PENDING
+  SCHEDULED
+  COMPLETED
+  CANCELLED
+}
+model Booking {
+  id        String         @id @default(cuid())
+  vehicleId String?
+  vehicle   Vehicle?       @relation(fields: [vehicleId], references: [id], onUpdate: Cascade, onDelete: SetNull)
+  name      String
+  phone     String
+  email     String
+  date      DateTime
+  startTime String
+  endTime   String
+  status    BookingStatus  @default(PENDING)
+  notes     String?
+  createdAt DateTime       @default(now())
+  updatedAt DateTime       @updatedAt
+  @@index([vehicleId])
+}
+
+model User {
+  id        String   @id @default(cuid())
+  name      String?
+  email     String?  @unique
+  password  String?
+  role      String   @default("USER") // "ADMIN" or "USER"
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
