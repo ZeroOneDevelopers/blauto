@@ -75,7 +75,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   const backgroundStyles: React.CSSProperties & Record<`--${string}`, string> = {};
 
   const fallbackBackgrounds = {
-    home: "url('https://lh3.googleusercontent.com/p/AF1QipPOli4TjTd_a2HWsMpkyCuvZmieirOZiqTBNo-t=s1360-w1360-h1020-rw')",
+    home: "url('https://lh3.googleusercontent.com/p/AF1QipNILPF4J37m6uDKjks-UACk-7Hw1PLJZRtGFE5_=s1360-w1360-h1020-rw')",
     showroom: "url('https://lh3.googleusercontent.com/gps-cs-s/AC9h4npSYfBmHmKBb6tcY4QOfTO0PrMD89Rv6CnQk664BBOLT2igSeCoSR_5JyX7E01VyQhhD04AYDT4aq3_azNmR6nOScku2NrNHc_WAbKC2UkXCoi4kxUOSuk9qXBAAicoqTRRPpX26w=s1360-w1360-h1020-rw')",
     details: "url('https://images.unsplash.com/photo-1590272456521-1bbe160a18ce?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDE0fHx8ZW58MHx8fHx8')",
     dashboard: "url('https://images.unsplash.com/photo-1590272456521-1bbe160a18ce?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDE0fHx8ZW58MHx8fHx8')",
