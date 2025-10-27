@@ -97,7 +97,7 @@ function FloatingPanel({
         <div
           id={panelId}
           style={style}
-          className="fixed z-[90] mt-1 max-w-md rounded-2xl border border-white/20 bg-black/80 p-3 text-xs uppercase tracking-[0.35em] text-silver/80 shadow-2xl backdrop-blur-xl"
+          className="fixed z-[90] mt-1 max-w-md rounded-2xl border border-white/20 bg-black/80 p-3 text-xs uppercase tracking-[0.35em] text-silver/80 shadow-[0_28px_80px_-40px_rgba(8,10,16,0.85)] backdrop-blur-xl"
         >
           {children}
         </div>
@@ -139,7 +139,7 @@ function FilterListbox({
             aria-label={`${label} filter`}
             aria-expanded={open}
             aria-controls={panelId}
-            className="flex min-h-12 w-full items-center justify-between rounded-full border border-white/25 bg-black/60 px-4 py-3 text-xs uppercase tracking-[0.35em] text-silver/80 transition focus:outline-none focus-visible:ring-2 focus-visible:ring-white/40 sm:px-5"
+            className="flex min-h-12 w-full items-center justify-between rounded-2xl border border-white/25 bg-black/60 px-4 py-3 text-xs uppercase tracking-[0.35em] text-silver/80 transition focus:outline-none focus-visible:ring-2 focus-visible:ring-white/40 focus-visible:ring-offset-2 focus-visible:ring-offset-black/60 sm:px-5"
           >
             <span className="flex-1 text-left font-medium text-silver/80">
               {label}: <span className="text-white/90">{current.label}</span>
@@ -153,7 +153,7 @@ function FilterListbox({
                   {({ active, selected }) => (
                     <div
                       className={clsx(
-                        'flex cursor-pointer items-center justify-between rounded-2xl px-4 py-3 transition',
+                        'flex cursor-pointer items-center justify-between rounded-2xl px-4 py-3 transition duration-200',
                         active && 'bg-white/10 text-white'
                       )}
                     >
@@ -231,7 +231,7 @@ function RangeDropdown({
             aria-label={`${label} filter`}
             aria-expanded={open}
             aria-controls={panelId}
-            className="flex min-h-12 w-full items-center justify-between rounded-full border border-white/25 bg-black/60 px-4 py-3 text-xs uppercase tracking-[0.35em] text-silver/80 transition focus:outline-none focus-visible:ring-2 focus-visible:ring-white/40 sm:px-5"
+            className="flex min-h-12 w-full items-center justify-between rounded-2xl border border-white/25 bg-black/60 px-4 py-3 text-xs uppercase tracking-[0.35em] text-silver/80 transition focus:outline-none focus-visible:ring-2 focus-visible:ring-white/40 focus-visible:ring-offset-2 focus-visible:ring-offset-black/60 sm:px-5"
           >
             <span className="flex-1 text-left font-medium text-silver/80">
               {label}: <span className="text-white/90">{formatRangeLabel(value, prefix, suffix)}</span>
@@ -256,7 +256,7 @@ function RangeDropdown({
                     step={step}
                     value={draft.min ?? ''}
                     onChange={(event) => setDraft((prev) => ({ ...prev, min: parse(event.target.value) }))}
-                    className="rounded-full border border-white/25 bg-black/60 px-4 py-2 text-sm text-white placeholder:text-silver/40 focus:border-white/60 focus:outline-none"
+                    className="rounded-2xl border border-white/25 bg-black/60 px-4 py-2 text-sm text-white placeholder:text-silver/40 focus:border-white/60 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/30"
                     placeholder={min ? `${prefix ?? ''}${min.toLocaleString()}${suffix ?? ''}` : 'Any'}
                   />
                 </label>
@@ -269,7 +269,7 @@ function RangeDropdown({
                     step={step}
                     value={draft.max ?? ''}
                     onChange={(event) => setDraft((prev) => ({ ...prev, max: parse(event.target.value) }))}
-                    className="rounded-full border border-white/25 bg-black/60 px-4 py-2 text-sm text-white placeholder:text-silver/40 focus:border-white/60 focus:outline-none"
+                    className="rounded-2xl border border-white/25 bg-black/60 px-4 py-2 text-sm text-white placeholder:text-silver/40 focus:border-white/60 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/30"
                     placeholder={max ? `${prefix ?? ''}${max.toLocaleString()}${suffix ?? ''}` : 'Any'}
                   />
                 </label>
@@ -279,7 +279,7 @@ function RangeDropdown({
                   as="button"
                   type="button"
                   value="clear"
-                  className="cursor-pointer rounded-full border border-white/15 px-4 py-2 text-[0.65rem] uppercase tracking-[0.3em] text-silver/70 transition hover:border-white/40 hover:text-white"
+                  className="cursor-pointer rounded-2xl border border-white/15 px-4 py-2 text-[0.65rem] uppercase tracking-[0.3em] text-silver/70 transition hover:border-white/40 hover:text-white"
                 >
                   Clear
                 </Listbox.Option>
@@ -287,7 +287,7 @@ function RangeDropdown({
                   as="button"
                   type="button"
                   value="apply"
-                  className="cursor-pointer rounded-full border border-white/30 bg-white/10 px-5 py-2 text-[0.65rem] uppercase tracking-[0.3em] text-white transition hover:bg-white/20"
+                  className="cursor-pointer rounded-2xl border border-white/30 bg-white/10 px-5 py-2 text-[0.65rem] uppercase tracking-[0.3em] text-white transition hover:bg-white/20"
                 >
                   Apply
                 </Listbox.Option>
@@ -302,8 +302,8 @@ function RangeDropdown({
 
 export default function ShowroomFilters({ value, onChange, brandOptions, fuelOptions, transmissionOptions }: Props) {
   return (
-    <div className="relative z-10 mb-6">
-      <div className="surface-panel isolate grid gap-3 rounded-3xl p-4 md:grid-cols-4">
+    <div className="relative z-10 mb-8">
+      <div className="surface-panel isolate grid gap-4 p-6 md:grid-cols-4 xl:grid-cols-5">
         <FilterListbox label="Brand" value={value.brand} options={[null, ...brandOptions]} onChange={(brand) => onChange({ ...value, brand })} />
         <FilterListbox label="Fuel" value={value.fuel} options={[null, ...fuelOptions]} onChange={(fuel) => onChange({ ...value, fuel })} />
         <FilterListbox

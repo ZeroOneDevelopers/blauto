@@ -46,10 +46,10 @@ export default function VehicleEnquiryForm({ vehicleId, vehicleTitle }: Props) {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-5 surface-panel rounded-3xl p-8">
+    <form onSubmit={handleSubmit} className="space-y-6 surface-panel p-10">
       <div>
         <h2 className="font-heading text-2xl text-white">Enquire About {vehicleTitle}</h2>
-        <p className="mt-2 text-sm text-silver/70">
+        <p className="mt-3 text-sm text-silver/70">
           Share your contact details and our liaison team will respond within the hour with tailored acquisition options.
         </p>
       </div>
@@ -63,8 +63,8 @@ export default function VehicleEnquiryForm({ vehicleId, vehicleTitle }: Props) {
             required
             value={form.name}
             onChange={(event) => setForm((prev) => ({ ...prev, name: event.target.value }))}
-            className="mt-2 w-full rounded-full border border-white/25 bg-black/60 px-5 py-3 text-sm text-white placeholder:text-silver/40 focus:border-white/60 focus:outline-none min-h-12"
-            placeholder="Alexandros Iliadis"
+            className="mt-3 w-full min-h-12 rounded-2xl border border-white/20 bg-black/60 px-5 py-3 text-sm text-white placeholder:text-silver/40 transition focus:border-white/60 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/30"
+            placeholder="Alexandros Laskaris"
             type="text"
           />
         </div>
@@ -77,7 +77,7 @@ export default function VehicleEnquiryForm({ vehicleId, vehicleTitle }: Props) {
             required
             value={form.phone}
             onChange={(event) => setForm((prev) => ({ ...prev, phone: event.target.value }))}
-            className="mt-2 w-full rounded-full border border-white/25 bg-black/60 px-5 py-3 text-sm text-white placeholder:text-silver/40 focus:border-white/60 focus:outline-none min-h-12"
+            className="mt-3 w-full min-h-12 rounded-2xl border border-white/20 bg-black/60 px-5 py-3 text-sm text-white placeholder:text-silver/40 transition focus:border-white/60 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/30"
             placeholder="+30 69 1234 5678"
             type="tel"
           />
@@ -91,7 +91,7 @@ export default function VehicleEnquiryForm({ vehicleId, vehicleTitle }: Props) {
             required
             value={form.email}
             onChange={(event) => setForm((prev) => ({ ...prev, email: event.target.value }))}
-            className="mt-2 w-full rounded-full border border-white/25 bg-black/60 px-5 py-3 text-sm text-white placeholder:text-silver/40 focus:border-white/60 focus:outline-none min-h-12"
+            className="mt-3 w-full min-h-12 rounded-2xl border border-white/20 bg-black/60 px-5 py-3 text-sm text-white placeholder:text-silver/40 transition focus:border-white/60 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/30"
             placeholder="vip@domain.com"
             type="email"
           />
@@ -104,7 +104,7 @@ export default function VehicleEnquiryForm({ vehicleId, vehicleTitle }: Props) {
             id="enquiry-message"
             value={form.message}
             onChange={(event) => setForm((prev) => ({ ...prev, message: event.target.value }))}
-            className="mt-2 w-full rounded-3xl border border-white/25 bg-black/60 px-5 py-4 text-sm text-white placeholder:text-silver/40 focus:border-white/60 focus:outline-none"
+            className="mt-3 w-full rounded-3xl border border-white/20 bg-black/60 px-5 py-4 text-sm text-white placeholder:text-silver/40 transition focus:border-white/60 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/30"
             placeholder="Share desired configuration, trade-in details or bespoke requests."
             rows={4}
           />

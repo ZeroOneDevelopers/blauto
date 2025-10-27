@@ -17,9 +17,9 @@ type GlowButtonProps = {
 
 const variants = {
   primary:
-    'bg-white text-graphite hover:bg-silver shadow-[0_0_30px_rgba(231,233,238,0.35)] hover:shadow-[0_0_45px_rgba(231,233,238,0.55)]',
+    'bg-white text-graphite shadow-[0_25px_60px_-30px_rgba(231,233,238,0.65)] hover:bg-silver hover:shadow-[0_30px_80px_-35px_rgba(231,233,238,0.8)]',
   secondary:
-    'bg-transparent text-white border border-white/40 hover:border-white/80 hover:bg-white/10'
+    'border border-white/40 bg-white/5 text-white backdrop-blur px-6 hover:border-white/80 hover:bg-white/10'
 };
 
 export default function GlowButton({
@@ -39,7 +39,7 @@ export default function GlowButton({
       type={type}
       disabled={disabled}
       className={clsx(
-        'relative inline-flex min-h-12 w-full items-center justify-center gap-3 rounded-full px-6 py-3 text-sm uppercase tracking-[0.35em] transition-all duration-500 whitespace-normal text-center sm:w-auto sm:px-8',
+        'relative inline-flex min-h-12 w-full items-center justify-center gap-3 rounded-2xl px-6 py-3 text-xs uppercase tracking-[0.4em] transition-all duration-500 whitespace-normal text-center sm:w-auto sm:px-8',
         variants[variant],
         disabled && 'pointer-events-none opacity-60',
         className

@@ -34,14 +34,14 @@ export default function Navbar() {
       initial={{ opacity: 0, y: -20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, ease: 'easeOut' }}
-      className="fixed inset-x-0 top-0 z-50 bg-graphite/80 backdrop-blur-lg overflow-visible"
+      className="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-graphite/85 shadow-[0_18px_60px_-40px_rgba(6,8,12,0.9)] backdrop-blur-2xl"
     >
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-5 sm:px-6 lg:px-12">
+      <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-12">
         <Link href="/" className="flex items-center justify-center" onClick={() => setOpen(false)}>
           <div className="relative h-12 w-48 sm:h-14 sm:w-56 lg:h-16 lg:w-64">
             <Image
               src="/images/iliadisLogo.png"
-              alt="Iliadis Executive Cars"
+              alt="BL Auto Gallery"
               fill
               priority
               sizes="(max-width: 640px) 192px, (max-width: 1024px) 224px, 256px"
@@ -49,12 +49,8 @@ export default function Navbar() {
             />
           </div>
         </Link>
-
-
-
-
         {/* Desktop nav */}
-        <nav className="hidden items-center gap-10 text-sm uppercase tracking-[0.35em] md:flex">
+        <nav className="hidden items-center gap-9 text-xs uppercase tracking-[0.4em] md:flex">
           {navLinks.map((link) => {
             const active = isActive(link.href);
             return (
@@ -64,7 +60,11 @@ export default function Navbar() {
                 className="relative focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/40 focus-visible:ring-offset-2 focus-visible:ring-offset-black"
                 aria-current={active ? 'page' : undefined}
               >
-                <span className={`transition-colors duration-300 ${active ? 'text-white' : 'text-silver/80 hover:text-white'}`}>
+                <span
+                  className={`rounded-md px-2 py-1 transition-colors duration-300 ${
+                    active ? 'text-white' : 'text-silver/80 hover:text-white'
+                  }`}
+                >
                   {link.name}
                 </span>
                 {active && (
@@ -80,7 +80,7 @@ export default function Navbar() {
 
         {/* Mobile toggle */}
         <button
-          className="md:hidden rounded-full border border-white/20 p-2 text-white transition hover:border-white/40 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/40 focus-visible:ring-offset-2 focus-visible:ring-offset-black/60"
+          className="md:hidden rounded-2xl border border-white/20 p-2 text-white transition hover:border-white/40 hover:bg-white/5 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/40 focus-visible:ring-offset-2 focus-visible:ring-offset-black/60"
           onClick={() => setOpen((prev) => !prev)}
           aria-label="Toggle navigation"
           aria-expanded={open}
@@ -102,7 +102,7 @@ export default function Navbar() {
             className="md:hidden"
             id={menuId}
           >
-            <div className="space-y-4 px-6 pb-8 text-sm uppercase tracking-[0.35em]">
+            <div className="space-y-4 px-6 pb-8 text-sm uppercase tracking-[0.4em]">
               {navLinks.map((link) => {
                 const active = isActive(link.href);
                 return (
@@ -110,7 +110,9 @@ export default function Navbar() {
                     key={link.href}
                     href={link.href}
                     onClick={() => setOpen(false)}
-                    className={`block border-b border-white/5 pb-4 transition ${active ? 'text-white' : 'text-silver/80 hover:text-white'}`}
+                    className={`block border-b border-white/5 pb-4 transition ${
+                      active ? 'text-white' : 'text-silver/80 hover:text-white'
+                    }`}
                     aria-current={active ? 'page' : undefined}
                   >
                     {link.name}

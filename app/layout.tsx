@@ -20,38 +20,37 @@ const body = Poppins({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://iliadiscars.car.gr'),
+  metadataBase: new URL('https://blautogallery.com'),
   title: {
-    default: 'Iliadis Executive Cars | Redefining Luxury Mobility',
-    template: '%s | Iliadis Executive Cars'
+    default: 'BL Auto Gallery | Curated Luxury Motoring',
+    template: '%s | BL Auto Gallery'
   },
   description:
-    'Iliadis Executive Cars curates Ferrari, Lamborghini, Rolls-Royce and bespoke executive vehicles in Athens. Explore the cinematic digital showroom and book a test drive.',
+    'BL Auto Gallery curates Ferrari, Lamborghini, Rolls-Royce and bespoke executive vehicles in Athens. Explore the cinematic digital showroom and book a test drive.',
   icons: {
     icon: 'public/images/favicon/favicon.svg',
     shortcut:"public/images/favicon/favicon.ico",
     apple:'public/images/favicon/apple-touch-icon.png'
   },
   openGraph: {
-    title: 'Iliadis Executive Cars Digital Showroom',
+    title: 'BL Auto Gallery Digital Showroom',
     description:
       'Immerse yourself in a cinematic collection of Ferrari, Lamborghini, and executive vehicles. Book a private test drive and experience luxury mobility in Athens.',
-    url: 'https://iliadiscars.car.gr',
-    siteName: 'Iliadis Executive Cars',
+    url: 'https://blautogallery.com',
+    siteName: 'BL Auto Gallery',
     images: [
       {
         url: '/images/showroom-preview.svg',
         width: 1200,
         height: 630,
-        alt: 'Iliadis Executive Cars Showroom'
+        alt: 'BL Auto Gallery Showroom'
       }
     ]
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Iliadis Executive Cars Digital Showroom',
-    description:
-      'Cinematic, luxury-grade experience to explore Ferrari, Lamborghini, and executive vehicles in Athens.',
+    title: 'BL Auto Gallery Digital Showroom',
+    description: 'Cinematic, luxury-grade experience to explore Ferrari, Lamborghini, and executive vehicles in Athens.',
     images: ['/images/showroom-preview.svg']
   }
 };
@@ -111,9 +110,9 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   const schema = {
     '@context': 'https://schema.org',
     '@type': 'AutoDealer',
-    name: 'Iliadis Executive Cars',
-    url: 'https://iliadiscars.car.gr',
-    logo: 'https://iliadiscars.car.gr/logo.png',
+    name: 'BL Auto Gallery',
+    url: 'https://blautogallery.com',
+    logo: 'https://blautogallery.com/logo.png',
     description:
       'Premium showroom in Athens specialising in Ferrari, Lamborghini, Rolls-Royce and executive vehicles.',
     address: {

@@ -1,6 +1,6 @@
-# Iliadis Executive Cars Digital Showroom
+# BL Auto Gallery Digital Showroom
 
-A cinematic, luxury-grade Next.js experience for Iliadis Executive Cars. The experience blends Tailwind CSS styling with Framer Motion micro-interactions to create a digital showroom, test-drive concierge and authenticated admin cockpit backed by Prisma + PostgreSQL.
+A cinematic, luxury-grade Next.js experience for BL Auto Gallery. The experience blends Tailwind CSS styling with Framer Motion micro-interactions to create a digital showroom, test-drive concierge and authenticated admin cockpit backed by Prisma + PostgreSQL.
 
 ## Tech Stack
 
@@ -56,7 +56,7 @@ slug,title,make,model,year,price,mileage,engine_cc,hp,fuel,transmission,body,col
 
 ## Assets
 
-- `public/images/iliadis-logo.svg` – Iliadis Executive Cars logotype
+- `public/images/iliadis-logo.svg` – Legacy Iliadis Executive Cars logotype (replace once the BL Auto Gallery asset is ready)
 - `public/images/showroom-preview.svg` – Social preview artwork
 - `public/sounds/` – Place mastered audio files referenced from the Prisma `audio_urls` array.
 
